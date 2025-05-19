@@ -1,0 +1,15 @@
+{
+  "type": "module",
+  "scripts": {
+    "dev": "npx tsx ./src/index.ts"
+  },
+  "dependencies": {
+    "@opensearch-project/opensearch": "^3.5.1",
+    "dotenv": "^16.5.0",
+    "mysql2": "^3.14.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.17",
+    "typescript": "^5.8.3"
+  }
+}
