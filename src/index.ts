@@ -11,6 +11,38 @@ var url = "https://betasearch.systementor.se"
 var index_name = "products-12";
 
 
+async function deleteAll(){
+var query = {
+    query: {
+      match_all: {},
+  },
+  from:0,
+  size:500
+};
+
+  let headers = new Headers();
+
+  headers.set('Authorization', 'Basic ' + Buffer.from(accessKey + ":" + secretKey).toString('base64'));
+  headers.set('Content-Type', 'application/json' );
+
+  const response = await fetch(url + `/api/index/v1/${index_name}/_search`,{
+    method:"POST",
+      headers:headers,
+      body:JSON.stringify(query)
+  });
+  const data = await response.json() as any;
+
+  if(data.hits.total.value == 0){
+    return
+  }
+  for(let i = 0; i  <  data.hits.hits.length;i++){
+    console.log(data.hits.hits[i])
+    await deleteDoc(data.hits.hits[i]._id)
+  }
+}
+//await deleteAll()
+//exit()
+
 
 async function getDocumentIdOrUndefined(webId:string):Promise<string|undefined>{
   var query = {
@@ -54,7 +86,7 @@ async function add(product:any){
   console.log(data)
 }
 
-async function update(docid:number, product:any){
+async function update(docid:string, product:any){
 
   let headers = new Headers();
 
@@ -67,6 +99,23 @@ async function update(docid:number, product:any){
     method:"POST",
       headers:headers,
       body:JSON.stringify(product)
+  });
+  const data = await response.json() as any;
+  console.log(data)
+}
+
+
+async function deleteDoc(docid:number){
+  let headers = new Headers();
+
+  headers.set('Authorization', 'Basic ' + Buffer.from(accessKey + ":" + secretKey).toString('base64'));
+  headers.set('Content-Type', 'application/json' );
+
+
+
+  const response = await fetch(url + `/api/index/v1/${index_name}/_doc/` + docid,{
+    method:"DELETE",
+      headers:headers
   });
   const data = await response.json() as any;
   console.log(data)
@@ -102,7 +151,7 @@ for(const product of await getAllProducts() ){
     ]
   };
 
-  const docId = await getDocumentIdOrUndefined(product.id)
+  const docId = await getDocumentIdOrUndefined(product.id.toString())
   if(docId != undefined){
     // DOC ID SKA SKICKAS IN inte product.id
     //UPDATE
@@ -114,6 +163,7 @@ for(const product of await getAllProducts() ){
   }
 }
 
+exit()
 
 // console.log("Nu körs programmet")
 // type ProductData = {
