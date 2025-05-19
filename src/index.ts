@@ -4,6 +4,14 @@ import { getAllProducts, getProductId, updateProductDescription } from "./databa
 import { exit } from "process";
 
 
+
+var accessKey = 'PDsMUOHw78Og_J-gjGvujQ';
+var secretKey='1KKc3cT5LTtRYckYKtPpCfe19H_P_Q';
+var url = "https://betasearch.systementor.se"
+var index_name = "products-12";
+
+
+
 async function getDocumentIdOrUndefined(webId:string):Promise<string|undefined>{
   var query = {
     query: {
@@ -68,11 +76,6 @@ async function update(docid:number, product:any){
 
 
 
-
-var accessKey = 'PDsMUOHw78Og_J-gjGvujQ';
-var secretKey='1KKc3cT5LTtRYckYKtPpCfe19H_P_Q';
-var url = "https://betasearch.systementor.se"
-var index_name = "products-12";
 
 
 for(const product of await getAllProducts() ){
