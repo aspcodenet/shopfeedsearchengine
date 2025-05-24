@@ -8,3 +8,87 @@
 {"level":"info","message":"This is an info message","timestamp":"2025-05-24T09:00:25.081Z"}
 {"level":"info","message":"Starting the application...","timestamp":"2025-05-24T09:01:34.099Z"}
 {"level":"info","message":"This is an info message","timestamp":"2025-05-24T09:01:34.126Z"}
+{"level":"info","message":"Starting the application...","timestamp":"2025-05-24T09:40:30.607Z"}
+{"level":"info","message":"This is an info message","timestamp":"2025-05-24T09:40:30.636Z"}
+{"level":"info","message":"Starting the application...","timestamp":"2025-05-24T09:46:38.820Z"}
+{"level":"info","message":"This is an info message","timestamp":"2025-05-24T09:46:38.852Z"}
+{"level":"info","message":"Starting the application...","timestamp":"2025-05-24T10:00:30.671Z"}
+{"level":"info","message":"This is an info message","timestamp":"2025-05-24T10:00:30.700Z"}
+{"level":"info","message":"Starting the application...","timestamp":"2025-05-24T10:01:32.566Z"}
+{"level":"info","message":"This is an info message","timestamp":"2025-05-24T10:01:32.597Z"}
+{"error":"fetch failed","level":"error","message":"An error occurred:","timestamp":"2025-05-24T10:01:32.626Z"}
+{"level":"info","message":"Starting the application...","timestamp":"2025-05-24T10:02:54.312Z"}
+{"level":"info","message":"This is an info message","timestamp":"2025-05-24T10:02:54.340Z"}
+{"error":"fetch failed","level":"error","message":"An error occurred:","timestamp":"2025-05-24T10:02:54.369Z"}
+{"level":"info","message":"Starting the application...","timestamp":"2025-05-24T10:03:16.247Z"}
+{"level":"info","message":"This is an info message","timestamp":"2025-05-24T10:03:16.278Z"}
+{"level":"info","message":"Starting the application...","timestamp":"2025-05-24T10:03:36.314Z"}
+{"level":"info","message":"This is an info message","timestamp":"2025-05-24T10:03:36.343Z"}
+{"level":"info","message":"Starting the application...","timestamp":"2025-05-24T10:04:13.617Z"}
+{"level":"info","message":"This is an info message","timestamp":"2025-05-24T10:04:13.645Z"}
+{"level":"info","message":"Starting the application...","timestamp":"2025-05-24T10:04:30.049Z"}
+{"level":"info","message":"This is an info message","timestamp":"2025-05-24T10:04:30.077Z"}
+{"level":"info","message":"Starting the application...","timestamp":"2025-05-24T10:05:29.109Z"}
+{"level":"info","message":"This is an info message","timestamp":"2025-05-24T10:05:29.140Z"}
+{"level":"info","message":"Starting the application...","timestamp":"2025-05-24T10:06:12.004Z"}
+{"level":"info","message":"This is an info message","timestamp":"2025-05-24T10:06:12.033Z"}
+{"level":"info","message":"Starting the application...","timestamp":"2025-05-24T10:06:39.344Z"}
+{"level":"info","message":"This is an info message","timestamp":"2025-05-24T10:06:39.376Z"}
+{"level":"info","message":"Starting the application...","timestamp":"2025-05-24T10:06:55.049Z"}
+{"level":"info","message":"This is an info message","timestamp":"2025-05-24T10:06:55.077Z"}
+{"level":"info","message":"Starting the application...","timestamp":"2025-05-24T10:07:02.138Z"}
+{"level":"info","message":"This is an info message","timestamp":"2025-05-24T10:07:02.168Z"}
+{"level":"info","message":"Starting the application...","timestamp":"2025-05-24T10:08:04.443Z"}
+{"level":"info","message":"This is an info message","timestamp":"2025-05-24T10:08:04.471Z"}
+{"level":"info","message":"Starting the application...","timestamp":"2025-05-24T10:08:56.890Z"}
+{"level":"info","message":"This is an info message","timestamp":"2025-05-24T10:08:56.919Z"}
+{"level":"info","message":"Starting the application...","timestamp":"2025-05-24T10:09:01.867Z"}
+{"level":"info","message":"This is an info message","timestamp":"2025-05-24T10:09:01.895Z"}
+{"level":"info","message":"Starting the application...","timestamp":"2025-05-24T10:12:29.174Z"}
+{"level":"info","message":"This is an info message","timestamp":"2025-05-24T10:12:29.204Z"}
+{"level":"info","message":"Starting the application...","timestamp":"2025-05-24T10:12:45.185Z"}
+{"level":"info","message":"This is an info message","timestamp":"2025-05-24T10:12:45.213Z"}
+{"error":"Could not create index products-5","level":"error","message":"An error occurred:","timestamp":"2025-05-24T10:12:45.368Z"}
+{"level":"info","message":"Starting the application...","timestamp":"2025-05-24T11:49:48.051Z"}
+{"level":"info","message":"This is an info message","timestamp":"2025-05-24T11:49:48.082Z"}
+{"level":"info","message":"Starting the application...","timestamp":"2025-05-24T11:52:35.129Z"}
+{"level":"info","message":"This is an info message","timestamp":"2025-05-24T11:52:35.160Z"}
+{"level":"info","message":"Starting the application...","timestamp":"2025-05-24T11:52:52.436Z"}
+{"level":"info","message":"This is an info message","timestamp":"2025-05-24T11:52:52.464Z"}
+{"error":"Could not create index products-5","level":"error","message":"An error occurred:","timestamp":"2025-05-24T11:52:52.617Z"}
+{"level":"info","message":"Starting the application...","timestamp":"2025-05-24T11:53:39.415Z"}
+{"level":"info","message":"This is an info message","timestamp":"2025-05-24T11:53:39.445Z"}
+{"error":"Could not create index products-5","level":"error","message":"An error occurred:","timestamp":"2025-05-24T11:53:39.602Z"}
+{"level":"info","message":"Starting the application...","timestamp":"2025-05-24T11:54:07.117Z"}
+{"level":"info","message":"This is an info message","timestamp":"2025-05-24T11:54:07.148Z"}
+{"error":"Could not create index products-5","level":"error","message":"An error occurred:","timestamp":"2025-05-24T11:54:14.263Z"}
+{"level":"info","message":"Starting the application...","timestamp":"2025-05-24T11:54:32.074Z"}
+{"level":"info","message":"This is an info message","timestamp":"2025-05-24T11:54:32.103Z"}
+{"error":"fetch failed","level":"error","message":"An error occurred:","timestamp":"2025-05-24T11:55:06.178Z"}
+{"level":"info","message":"Starting the application...","timestamp":"2025-05-24T11:55:23.217Z"}
+{"level":"info","message":"This is an info message","timestamp":"2025-05-24T11:55:23.246Z"}
+{"error":"fetch failed","level":"error","message":"An error occurred:","timestamp":"2025-05-24T11:55:23.287Z"}
+{"level":"info","message":"Starting the application...","timestamp":"2025-05-24T11:56:19.487Z"}
+{"level":"info","message":"This is an info message","timestamp":"2025-05-24T11:56:19.519Z"}
+{"error":"fetch failed","level":"error","message":"An error occurred:","timestamp":"2025-05-24T11:56:19.561Z"}
+{"level":"info","message":"Starting the application...","timestamp":"2025-05-24T11:56:43.530Z"}
+{"level":"info","message":"This is an info message","timestamp":"2025-05-24T11:56:43.559Z"}
+{"error":"Could not create index products-5","level":"error","message":"An error occurred:","timestamp":"2025-05-24T11:56:50.422Z"}
+{"level":"info","message":"Starting the application...","timestamp":"2025-05-24T11:57:50.565Z"}
+{"level":"info","message":"This is an info message","timestamp":"2025-05-24T11:57:50.594Z"}
+{"error":"Could not create index products-5","level":"error","message":"An error occurred:","timestamp":"2025-05-24T11:57:53.865Z"}
+{"level":"info","message":"Starting the application...","timestamp":"2025-05-24T11:58:09.244Z"}
+{"level":"info","message":"This is an info message","timestamp":"2025-05-24T11:58:09.273Z"}
+{"error":"Could not create index products-5","level":"error","message":"An error occurred:","timestamp":"2025-05-24T11:58:12.677Z"}
+{"level":"info","message":"Starting the application...","timestamp":"2025-05-24T11:59:54.092Z"}
+{"level":"info","message":"This is an info message","timestamp":"2025-05-24T11:59:54.121Z"}
+{"level":"info","message":"Starting the application...","timestamp":"2025-05-24T12:01:13.730Z"}
+{"level":"info","message":"This is an info message","timestamp":"2025-05-24T12:01:13.761Z"}
+{"level":"info","message":"Starting the application...","timestamp":"2025-05-24T12:03:55.583Z"}
+{"level":"info","message":"This is an info message","timestamp":"2025-05-24T12:03:55.612Z"}
+{"error":"Could not create index products-5","level":"error","message":"An error occurred:","timestamp":"2025-05-24T12:03:56.064Z"}
+{"level":"info","message":"Starting the application...","timestamp":"2025-05-24T12:05:21.297Z"}
+{"level":"info","message":"This is an info message","timestamp":"2025-05-24T12:05:21.329Z"}
+{"error":"Could not create index products-5","level":"error","message":"An error occurred:","timestamp":"2025-05-24T12:05:21.607Z"}
+{"level":"info","message":"Starting the application...","timestamp":"2025-05-24T12:07:22.274Z"}
+{"level":"info","message":"This is an info message","timestamp":"2025-05-24T12:07:22.304Z"}

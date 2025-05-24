@@ -36,10 +36,14 @@ logger.info('Starting the application...');
 logger.info('This is an info message');
 
 
-var accessKey = 'PDsMUOHw78Og_J-gjGvujQ';
-var secretKey='1KKc3cT5LTtRYckYKtPpCfe19H_P_Q';
-var url = "https://betasearch.systementor.se"
-var index_name = "products-12";
+//var accessKey = 'PDsMUOHw78Og_J-gjGvujQ';
+var accessKey= 'MHPD-epV-6ZygsphezEPxw';
+
+//var secretKey='1KKc3cT5LTtRYckYKtPpCfe19H_P_Q';
+var secretKey = 'sTcru3VjnlVs1fgDTY91hmT0otD8Cw';
+//var url = "https://betasearch.systementor.se"
+var url = "http://localhost:8080";
+var index_name = "products-5";
 
 
 async function deleteAll(){
@@ -151,12 +155,122 @@ async function deleteDoc(docid:number){
 
 
 
+// Index Exisis
+async function indexExists():Promise<boolean>{
+  let headers = new Headers();
+
+  headers.set('Authorization', 'Basic ' + Buffer.from(accessKey + ":" + secretKey).toString('base64'));
+  headers.set('Content-Type', 'application/json' );
+
+  const response = await fetch(url + `/api/index/v1/${index_name}`,{
+    method:"HEAD",
+      headers:headers
+  });
+  if(response.status == 200){
+    return true
+  }
+  return false
+}
+// Drop Index
+async function dropIndex():Promise<void>{
+  let headers = new Headers();
+
+  headers.set('Authorization', 'Basic ' + Buffer.from(accessKey + ":" + secretKey).toString('base64'));
+  headers.set('Content-Type', 'application/json' );
+
+  const response = await fetch(url + `/api/index/v1/${index_name}`,{
+    method:"DELETE",
+      headers:headers
+  });
+  if(response.status != 200){
+    throw new Error("Could not drop index " + index_name)
+  }
+}
+// Create Index
+async function createIndex(language):Promise<void>{
+  let headers = new Headers();
+
+  headers.set('Authorization', 'Basic ' + Buffer.from(accessKey + ":" + secretKey).toString('base64'));
+  headers.set('Content-Type', 'application/json' );
+
+  const response = await fetch(url + `/api/index/v1/${index_name}`,{
+    method:"PUT",
+      headers:headers,
+      body: `{
+	"mappings": {      
+  "properties": {
+    "categoryName":{
+      "type": "keyword"
+    },
+    "categoryid": {
+      "type": "long"
+    },
+    "color": {
+      "type": "keyword"
+    },
+    "combinedsearchtext": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "price": {
+      "type": "long"
+    },
+    "stockLevel": {
+      "type": "keyword"
+    },
+    "string_facet": {
+      "type": "nested",
+      "properties": {
+        "facet_name": {
+          "type": "keyword"
+        },
+        "facet_value": {
+          "type": "keyword"
+        }
+      }
+    },
+    "title": {
+      "type": "keyword"
+    },
+    "webid": {
+      "type": "long"
+    }
+  }
+},
+	"settings": {
+		"analysis": {
+		"analyzer": {
+			"default": {
+			"type": "` + language + `"
+			}
+		}
+		}
+	}
+	}` });
+  if(response.status != 200){
+  console.log(await response.text())
+    throw new Error("Could not create index " + index_name)
+  }
+}
+
 
 
 
 try {
+  const ex = await indexExists();
+  console.log("Index exists: " + ex);
+  if(ex){
+    // Drop index
+    await dropIndex();
+  } else{
+    // Create index
+  }
+    await createIndex("english"); // swedish
+
   // console.log("Nu körs programmet")  
-  //await deleteAll()
+  await deleteAll()
   for(const product of await getAllProducts() ){
     console.log(product.id)  
 
@@ -164,8 +278,9 @@ try {
       "webid": product.id,
       "title": product.title,
       "description": product.description2,
+      "combinedsearchtext" : product.title + " " + product.description2 + " " + product.color2 + " " + product.categoryName,
       "price": product.price,
-      "categoryName": product.categoryId,
+      "categoryName": product.categoryname,
       "stockLevel": product.stockLevel,
       "color": product.color2,
       "categoryid": product.categoryId,
@@ -195,6 +310,7 @@ try {
 
   exit()
 }catch (error) {
+  console.error('An error occurred:', error);
   logger.error('An error occurred:', { error: error instanceof Error ? error.message : String(error) });
 }
 
