@@ -27,7 +27,7 @@ const logger = winston.createLogger({
   transports: [
     new winston.transports.Console(), 
     transport,
-    new winston.transports.File({ filename: 'C:\\Users\\stefa\\source\\shopfeedsearchengine\\app.log' })
+    new winston.transports.File({ filename: 'app.log' })
   ]
  });
 
@@ -36,122 +36,175 @@ logger.info('Starting the application...');
 logger.info('This is an info message');
 
 
-
-// var accessKey = 'PDsMUOHw78Og_J-gjGvujQ';
-// var secretKey='1KKc3cT5LTtRYckYKtPpCfe19H_P_Q';
-// var url = "https://betasearch.systementor.se"
-// var index_name = "products-12";
-
-
-// async function deleteAll(){
-// var query = {
-//     query: {
-//       match_all: {},
-//   },
-//   from:0,
-//   size:500
-// };
-
-//   let headers = new Headers();
-
-//   headers.set('Authorization', 'Basic ' + Buffer.from(accessKey + ":" + secretKey).toString('base64'));
-//   headers.set('Content-Type', 'application/json' );
-
-//   const response = await fetch(url + `/api/index/v1/${index_name}/_search`,{
-//     method:"POST",
-//       headers:headers,
-//       body:JSON.stringify(query)
-//   });
-//   const data = await response.json() as any;
-
-//   if(data.hits.total.value == 0){
-//     return
-//   }
-//   for(let i = 0; i  <  data.hits.hits.length;i++){
-//     console.log(data.hits.hits[i])
-//     await deleteDoc(data.hits.hits[i]._id)
-//   }
-// }
-// //await deleteAll()
-// //exit()
+var accessKey = 'PDsMUOHw78Og_J-gjGvujQ';
+var secretKey='1KKc3cT5LTtRYckYKtPpCfe19H_P_Q';
+var url = "https://betasearch.systementor.se"
+var index_name = "products-12";
 
 
-// async function getDocumentIdOrUndefined(webId:string):Promise<string|undefined>{
-//   var query = {
-//     query: {
-//       term: {
-//         webid: webId,
-//     },
-//   }};
+async function deleteAll(){
+var query = {
+    query: {
+      match_all: {},
+  },
+  from:0,
+  size:500
+};
 
-//   let headers = new Headers();
+  let headers = new Headers();
 
-//   headers.set('Authorization', 'Basic ' + Buffer.from(accessKey + ":" + secretKey).toString('base64'));
-//   headers.set('Content-Type', 'application/json' );
+  headers.set('Authorization', 'Basic ' + Buffer.from(accessKey + ":" + secretKey).toString('base64'));
+  headers.set('Content-Type', 'application/json' );
 
-//   const response = await fetch(url + `/api/index/v1/${index_name}/_search`,{
-//     method:"POST",
-//       headers:headers,
-//       body:JSON.stringify(query)
-//   });
-//   const data = await response.json() as any;
-//   if(data.hits.total.value == 0){
-//     return undefined
-//   }
-//   return data.hits.hits[0]._id
-// }
+  const response = await fetch(url + `/api/index/v1/${index_name}/_search`,{
+    method:"POST",
+      headers:headers,
+      body:JSON.stringify(query)
+  });
+  const data = await response.json() as any;
+
+  if(data.hits.total.value == 0){
+    return
+  }
+  for(let i = 0; i  <  data.hits.hits.length;i++){
+    console.log(data.hits.hits[i])
+    await deleteDoc(data.hits.hits[i]._id)
+  }
+}
+
+async function getDocumentIdOrUndefined(webId:string):Promise<string|undefined>{
+  var query = {
+    query: {
+      term: {
+        webid: webId,
+    },
+  }};
+
+  let headers = new Headers();
+
+  headers.set('Authorization', 'Basic ' + Buffer.from(accessKey + ":" + secretKey).toString('base64'));
+  headers.set('Content-Type', 'application/json' );
+
+  const response = await fetch(url + `/api/index/v1/${index_name}/_search`,{
+    method:"POST",
+      headers:headers,
+      body:JSON.stringify(query)
+  });
+  const data = await response.json() as any;
+  if(data.hits.total.value == 0){
+    return undefined
+  }
+  return data.hits.hits[0]._id
+}
 
 
-// async function add(product:any){
+async function add(product:any){
 
-//   let headers = new Headers();
+  let headers = new Headers();
 
-//   headers.set('Authorization', 'Basic ' + Buffer.from(accessKey + ":" + secretKey).toString('base64'));
-//   headers.set('Content-Type', 'application/json' );
+  headers.set('Authorization', 'Basic ' + Buffer.from(accessKey + ":" + secretKey).toString('base64'));
+  headers.set('Content-Type', 'application/json' );
 
-//   const response = await fetch(url + `/api/index/v1/${index_name}/_doc`,{
-//     method:"POST",
-//       headers:headers,
-//       body:JSON.stringify(product)
-//   });
-//   const data = await response.json() as any;
-//   console.log(data)
-// }
+  const response = await fetch(url + `/api/index/v1/${index_name}/_doc`,{
+    method:"POST",
+      headers:headers,
+      body:JSON.stringify(product)
+  });
+  const data = await response.json() as any;
+  console.log(data)
+}
 
-// async function update(docid:string, product:any){
+async function update(docid:string, product:any){
 
-//   let headers = new Headers();
+  let headers = new Headers();
 
-//   headers.set('Authorization', 'Basic ' + Buffer.from(accessKey + ":" + secretKey).toString('base64'));
-//   headers.set('Content-Type', 'application/json' );
+  headers.set('Authorization', 'Basic ' + Buffer.from(accessKey + ":" + secretKey).toString('base64'));
+  headers.set('Content-Type', 'application/json' );
 
 
 
-//   const response = await fetch(url + `/api/index/v1/${index_name}/_doc/` + docid,{
-//     method:"POST",
-//       headers:headers,
-//       body:JSON.stringify(product)
-//   });
-//   const data = await response.json() as any;
-//   console.log(data)
-// }
+  const response = await fetch(url + `/api/index/v1/${index_name}/_doc/` + docid,{
+    method:"POST",
+      headers:headers,
+      body:JSON.stringify(product)
+  });
+  const data = await response.json() as any;
+  console.log(data)
+}
 
 
-// async function deleteDoc(docid:number){
-//   let headers = new Headers();
+async function deleteDoc(docid:number){
+  let headers = new Headers();
 
-//   headers.set('Authorization', 'Basic ' + Buffer.from(accessKey + ":" + secretKey).toString('base64'));
-//   headers.set('Content-Type', 'application/json' );
+  headers.set('Authorization', 'Basic ' + Buffer.from(accessKey + ":" + secretKey).toString('base64'));
+  headers.set('Content-Type', 'application/json' );
 
 
 
-//   const response = await fetch(url + `/api/index/v1/${index_name}/_doc/` + docid,{
-//     method:"DELETE",
-//       headers:headers
-//   });
-//   const data = await response.json() as any;
-//   console.log(data)
-// }
+  const response = await fetch(url + `/api/index/v1/${index_name}/_doc/` + docid,{
+    method:"DELETE",
+      headers:headers
+  });
+  const data = await response.json() as any;
+  console.log(data)
+}
+
+
+
+
+
+
+try {
+  // console.log("Nu körs programmet")  
+  //await deleteAll()
+  for(const product of await getAllProducts() ){
+    console.log(product.id)  
+
+    const searchObject = {
+      "webid": product.id,
+      "title": product.title,
+      "description": product.description2,
+      "price": product.price,
+      "categoryName": product.categoryId,
+      "stockLevel": product.stockLevel,
+      "color": product.color2,
+      "categoryid": product.categoryId,
+      "string_facet": [
+        {
+          "facet_name": "Color",
+          "facet_value": product.color2
+        },
+        {
+          "facet_name": "Category",
+          "facet_value": product.categoryName
+        }
+      ]
+    };
+
+    const docId = await getDocumentIdOrUndefined(product.id.toString())
+    if(docId != undefined){
+      // DOC ID SKA SKICKAS IN inte product.id
+      //UPDATE
+      update(docId,searchObject)
+    }else{
+      //ADD 
+      add(searchObject)
+      
+    }
+}
+
+  exit()
+}catch (error) {
+  logger.error('An error occurred:', { error: error instanceof Error ? error.message : String(error) });
+}
+
+
+
+
+
+
+
+
 
 
 
