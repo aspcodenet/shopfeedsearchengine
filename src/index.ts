@@ -36,14 +36,14 @@ logger.info('Starting the application...');
 logger.info('This is an info message');
 
 
-var accessKey = 'PDsMUOHw78Og_J-gjGvujQ';
+var accessKey = 'qLidn4cVx6dS8dhJ6zRCHw';
 //var accessKey= 'MHPD-epV-6ZygsphezEPxw';
 
-var secretKey='1KKc3cT5LTtRYckYKtPpCfe19H_P_Q';
+var secretKey='7JByYAMA4aMbRLtCH8WdBauMfu_ENQ';
 //var secretKey = 'sTcru3VjnlVs1fgDTY91hmT0otD8Cw';
 var url = "https://betasearch.systementor.se"
 //var url = "http://localhost:8080";
-var index_name = "prodcts-12";
+var index_name = "products-11113";
 
 
 async function deleteAll(){
@@ -310,7 +310,6 @@ try {
 
   exit()
 }catch (error) {
-  console.error('An error occurred:', error);
   logger.error('An error occurred:', { error: error instanceof Error ? error.message : String(error) });
 }
 
