@@ -32,7 +32,7 @@ export async function getAllProducts() : Promise<ProductInfo[]>{
    // SELECT id * FROM Products WHERE title=productName
     const conn = await connection;
     
-    const [rows] = await conn.query<ProductInfo[]>("SELECT p.id,title, p.price,p.stockLevel,p.color2, p.description2, p.categoryId, c.name as categoryname from Products p JOIN Category c on c.id=p.categoryId")    
+    const [rows] = await conn.query<ProductInfo[]>("SELECT p.id,title, p.price,p.stockLevel,p.color2, p.description2, p.categoryId, c.name as categoryName from Products p JOIN Category c on c.id=p.categoryId")    
     return rows
 }
 

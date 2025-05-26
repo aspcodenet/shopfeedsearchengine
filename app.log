@@ -92,3 +92,10 @@
 {"error":"Could not create index products-5","level":"error","message":"An error occurred:","timestamp":"2025-05-24T12:05:21.607Z"}
 {"level":"info","message":"Starting the application...","timestamp":"2025-05-24T12:07:22.274Z"}
 {"level":"info","message":"This is an info message","timestamp":"2025-05-24T12:07:22.304Z"}
+{"level":"info","message":"Starting the application...","timestamp":"2025-05-24T13:16:17.165Z"}
+{"level":"info","message":"This is an info message","timestamp":"2025-05-24T13:16:17.194Z"}
+{"level":"info","message":"Starting the application...","timestamp":"2025-05-24T13:35:17.861Z"}
+{"level":"info","message":"This is an info message","timestamp":"2025-05-24T13:35:17.891Z"}
+{"error":"Could not create index products-5","level":"error","message":"An error occurred:","timestamp":"2025-05-24T13:35:18.210Z"}
+{"level":"info","message":"Starting the application...","timestamp":"2025-05-24T13:35:45.852Z"}
+{"level":"info","message":"This is an info message","timestamp":"2025-05-24T13:35:45.881Z"}

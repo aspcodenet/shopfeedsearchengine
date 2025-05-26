@@ -36,14 +36,14 @@ logger.info('Starting the application...');
 logger.info('This is an info message');
 
 
-//var accessKey = 'PDsMUOHw78Og_J-gjGvujQ';
-var accessKey= 'MHPD-epV-6ZygsphezEPxw';
+var accessKey = 'PDsMUOHw78Og_J-gjGvujQ';
+//var accessKey= 'MHPD-epV-6ZygsphezEPxw';
 
-//var secretKey='1KKc3cT5LTtRYckYKtPpCfe19H_P_Q';
-var secretKey = 'sTcru3VjnlVs1fgDTY91hmT0otD8Cw';
-//var url = "https://betasearch.systementor.se"
-var url = "http://localhost:8080";
-var index_name = "products-5";
+var secretKey='1KKc3cT5LTtRYckYKtPpCfe19H_P_Q';
+//var secretKey = 'sTcru3VjnlVs1fgDTY91hmT0otD8Cw';
+var url = "https://betasearch.systementor.se"
+//var url = "http://localhost:8080";
+var index_name = "prodcts-12";
 
 
 async function deleteAll(){
@@ -280,7 +280,7 @@ try {
       "description": product.description2,
       "combinedsearchtext" : product.title + " " + product.description2 + " " + product.color2 + " " + product.categoryName,
       "price": product.price,
-      "categoryName": product.categoryname,
+      "categoryName": product.categoryName,
       "stockLevel": product.stockLevel,
       "color": product.color2,
       "categoryid": product.categoryId,
