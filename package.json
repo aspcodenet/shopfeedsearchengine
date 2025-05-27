@@ -6,7 +6,10 @@
   "dependencies": {
     "@opensearch-project/opensearch": "^3.5.1",
     "dotenv": "^16.5.0",
-    "mysql2": "^3.14.1"
+    "mysql2": "^3.14.1",
+    "node-fetch": "^3.3.2",
+    "winston": "^3.17.0",
+    "winston-transport-openobserve": "^1.0.5"
   },
   "devDependencies": {
     "@types/node": "^22.15.17",
