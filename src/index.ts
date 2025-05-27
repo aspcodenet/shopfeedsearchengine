@@ -7,7 +7,7 @@ import { indexExists, createIndex, add, getDocumentIdOrUndefined, update, dropIn
 let index_name = "products-13";
 
 
-//await dropIndex(index_name); // ta bort indexet om det finns, annars skapar vi ett nytt
+await dropIndex(index_name); // ta bort indexet om det finns, annars skapar vi ett nytt
 //exit();
 // 1. Finns det ett index i betasearch.systementor.se som har mitt namn?
 if(await indexExists(index_name) == false){
@@ -50,7 +50,7 @@ for(const product of  products){
       update(index_name,docId, searchObject); // DOC ID SKA SKICKAS IN inte product.id
       // UPDATE
     }else{
-      add(index_name,product)
+      add(index_name,searchObject)
     }
  
 
